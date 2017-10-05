@@ -2,6 +2,7 @@ package edu.cnm.deepdive.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
@@ -36,12 +37,19 @@ public class Deck {
     Collections.shuffle(cards);
   }
 
-  public void sort() {
+  //public void sort() {
     //how many elements in the array
     //sort(0, cards.size());
     //Java will do sort
+    //Collections.sort(cards);
+  //sort is overloaded
+    public void sort(Comparator<Card> comp) {
+    Collections.sort(cards, comp);
+  }
+  public void sort() {
     Collections.sort(cards);
   }
+
 
   private void sort(int start, int end) {
     if (end <= start + 1) {
